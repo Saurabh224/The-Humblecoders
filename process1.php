@@ -25,10 +25,9 @@ $last_name = mysql_real_escape_string($last_name);
 $user_name =mysql_real_escape_string($user_name);
 $password =mysql_real_escape_string($password);
 
-mysql_connect("localhost", "root", "database");
-mysql_select_db("community_services");
 
-$query = "INSERT INTO `community_services`.`register` (`fname`, `lname`, `uname`, `psw`) VALUES ('first_name', '$last_name', '$user_name', '$password');";
+
+$query = "INSERT INTO `community_services`.`register` (`fname`, `lname`, `uname`, `psw`) VALUES ('$first_name', '$last_name', '$user_name', '$password');";
 mysql_query($query);
 if ($conn->query($query) === TRUE) {
     echo "New record created successfully";

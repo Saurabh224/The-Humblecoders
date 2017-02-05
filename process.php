@@ -8,13 +8,15 @@ $password = stripcslashes($password);
 $user_name =mysql_real_escape_string($user_name);
 $password =mysql_real_escape_string($password);
 
-mysql_connect("localhost", "root", "");
-mysql_select_db("community_service");
+mysql_connect("localhost", "root", "database");
+mysql_select_db("community_services");
 
 $result = mysql_query("select * from register where uname = '$user_name' and psw = '$password'") or die("Failed to query database ".mysql_error());
 $row = mysql_fetch_array($result);
 if ($row['uname'] == $user_name && $row['psw'] == $password ){
-	echo "Login success Welcome";
+	// echo "Login success Welcome";
+	<form method="post" action="main.html">
+
 }else{
 	echo "Login failed";
 }
